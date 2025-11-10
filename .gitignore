@@ -1,0 +1,44 @@
+# Build artifacts
+build/
+bin/
+lib/
+*.o
+*.obj
+*.so
+*.a
+*.dll
+*.exe
+cmake-build-*/ # For CLion/IntelliJ CMake builds
+CMakeFiles/
+CMakeCache.txt
+CTestTestfile.cmake
+Makefile
+cmake_install.cmake
+install_manifest.txt
+
+# IDE-specific files
+.idea/ # IntelliJ/CLion
+.vscode/ # VSCode
+*.swp # Vim swap files
+*.suo # Visual Studio Solution User Options
+*.user # Visual Studio User Options
+*.ntvs* # Visual Studio Node.js Tools
+*.sln.docstates # Visual Studio
+*.filters # Visual Studio
+*.vcxproj.user # Visual Studio
+*.vcproj.user # Visual Studio
+
+# Operating system specific
+.DS_Store # macOS
+.DS_Store? # macOS
+._* # macOS
+.Spotlight-V100 # macOS
+.Trashes # macOS
+ehthumbs.db # Windows
+Thumbs.db # Windows
+
+# Other temporary files
+*.log
+*.tmp
+*.bak
+
