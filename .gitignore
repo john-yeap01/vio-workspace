@@ -1,9 +1,8 @@
-# Build artifacts
-cat > .gitignore << 'EOF'
 # catkin artifacts
 build/
 devel/
 logs/
+.catkin_tools/
 
 bin/
 lib/
