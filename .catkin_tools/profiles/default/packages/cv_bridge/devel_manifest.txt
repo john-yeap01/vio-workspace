@@ -1,0 +1,9 @@
+vision_opencv/cv_bridge
+/home/iris/vio_ws/devel/.private/cv_bridge/lib/libcv_bridge.so /home/iris/vio_ws/devel/lib/libcv_bridge.so
+/home/iris/vio_ws/devel/.private/cv_bridge/lib/python3/dist-packages/cv_bridge/__init__.py /home/iris/vio_ws/devel/lib/python3/dist-packages/cv_bridge/__init__.py
+/home/iris/vio_ws/devel/.private/cv_bridge/lib/python3/dist-packages/cv_bridge/boost/__init__.py /home/iris/vio_ws/devel/lib/python3/dist-packages/cv_bridge/boost/__init__.py
+/home/iris/vio_ws/devel/.private/cv_bridge/lib/python3/dist-packages/cv_bridge/boost/cv_bridge_boost.so /home/iris/vio_ws/devel/lib/python3/dist-packages/cv_bridge/boost/cv_bridge_boost.so
+/home/iris/vio_ws/devel/.private/cv_bridge/lib/pkgconfig/cv_bridge.pc /home/iris/vio_ws/devel/lib/pkgconfig/cv_bridge.pc
+/home/iris/vio_ws/devel/.private/cv_bridge/share/cv_bridge/cmake/cv_bridgeConfig-version.cmake /home/iris/vio_ws/devel/share/cv_bridge/cmake/cv_bridgeConfig-version.cmake
+/home/iris/vio_ws/devel/.private/cv_bridge/share/cv_bridge/cmake/cv_bridge-extras.cmake /home/iris/vio_ws/devel/share/cv_bridge/cmake/cv_bridge-extras.cmake
+/home/iris/vio_ws/devel/.private/cv_bridge/share/cv_bridge/cmake/cv_bridgeConfig.cmake /home/iris/vio_ws/devel/share/cv_bridge/cmake/cv_bridgeConfig.cmake
