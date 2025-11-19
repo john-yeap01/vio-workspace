@@ -1,5 +1,6 @@
 import cv2
 import numpy as np
+from numpy.typing import NDArray
 
 cam = cv2.VideoCapture(0, cv2.CAP_AVFOUNDATION)
 

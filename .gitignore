@@ -42,3 +42,4 @@ Thumbs.db # Windows
 *.tmp
 *.bak
 
+__pycache__/
