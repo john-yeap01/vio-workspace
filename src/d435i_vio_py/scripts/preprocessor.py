@@ -8,7 +8,7 @@ import cv2
 from cv_bridge import CvBridge
 
 
-class ColorViewer:
+class Preprocessor:
     def __init__(self):
         self.bridge = CvBridge()
         self.sub = rospy.Subscriber(
@@ -20,16 +20,22 @@ class ColorViewer:
 
     def callback(self, msg):
         # ROS Image -> OpenCV BGR
-        frame = self.bridge.imgmsg_to_cv2(msg, desired_encoding="bgr8")
-        cv2.imshow("D435i Color", frame)
+        raw = self.bridge.imgmsg_to_cv2(msg, desired_encoding="bgr8")
+        gray  = cv2.cvtColor(raw, cv2.COLOR_BGR2GRAY)
+        blur = cv2.GaussianBlur(gray, (5,5), 0)
+
+
+
+
+        cv2.imshow("D435i Preprocessed", blur)
         key = cv2.waitKey(1)
         if key == 27:  # ESC to quit
             rospy.signal_shutdown("User exit")
 
 def main():
-    rospy.init_node("d435i_color_viewer")
-    viewer = ColorViewer()
-    rospy.loginfo("Color viewer started.")
+    rospy.init_node("d435i_preprocessed_viewer")
+    viewer = Preprocessor()
+    rospy.loginfo("Preprocessed viewer started.")
     rospy.spin()
     cv2.destroyAllWindows()
 
