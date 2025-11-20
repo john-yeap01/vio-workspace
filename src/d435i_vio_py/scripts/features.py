@@ -6,6 +6,7 @@ import rospy
 from sensor_msgs.msg import Image
 import cv2
 from cv_bridge import CvBridge
+import numpy as np
 
 
 class Preprocessor:
@@ -18,14 +19,31 @@ class Preprocessor:
             queue_size=1
         )
 
-    def callback(self, msg):
+    def callback(self, msg: Image):
         # ROS Image -> OpenCV BGR
         raw = self.bridge.imgmsg_to_cv2(msg, desired_encoding="bgr8")
+        
+        
+
         gray  = cv2.cvtColor(raw, cv2.COLOR_BGR2GRAY)
         blur = cv2.GaussianBlur(gray, (5,5), 0.5)
+        canny = cv2.Canny(blur, 50, 100)
+
+        overlay = raw.copy()
+        overlay[canny != 0] = (0, 0, 255)   # BGR → red
+
+        corners = cv2.goodFeaturesToTrack(gray, maxCorners=50, qualityLevel=0.01, minDistance=7)
 
 
-        cv2.imshow("D435i Preprocessed", blur)
+        blended = cv2.addWeighted(raw,0.8, overlay, 0.2, 0)
+        if corners is not None:
+            for p in corners:
+                x, y = p.ravel()
+
+                cv2.circle(blended, (int(x), int(y)), 3, (0,255,0), -1)
+
+        
+        cv2.imshow("D435i Preprocessed", blended)
         key = cv2.waitKey(1)
         if key == 27:  # ESC to quit
             rospy.signal_shutdown("User exit")
