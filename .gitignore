@@ -22,7 +22,7 @@ install_manifest.txt
 
 # IDE-specific files
 .idea/ # IntelliJ/CLion
-.vscode/ # VSCode
+# .vscode/ # VSCode
 *.swp # Vim swap files
 *.suo # Visual Studio Solution User Options
 *.user # Visual Studio User Options
