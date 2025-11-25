@@ -120,6 +120,7 @@ class OpticalFlow:
         # ---------------------------------------------------------------------
         # DRAW TRACKS
         # ---------------------------------------------------------------------
+        # shape of new and prev is N,1,2 
         for new, prev in zip(good_new, good_prev):
             xnew, ynew = new.flatten()
             xprev, yprev = prev.flatten()
